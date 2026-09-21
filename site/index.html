@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="戴颖的简历、网页项目、Agent Skill 与插件。">
+  <meta name="theme-color" content="#f5f5f1">
+  <title>戴颖 / 个人页面</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/github.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到正文</a>
+  <header class="contact-bar"><div class="contact-inner"><span><b>电话</b>159-9484-7606</span><a href="mailto:1830277910@qq.com"><b>邮箱</b>1830277910@qq.com</a><span><b>所在地</b>深圳 / 香港</span><a href="https://github.com/dddzzz123-dz" target="_blank" rel="noopener"><b>GitHub 主页</b>↗</a></div></header>
+  <main id="main">
+    <section class="hero wrap" id="top">
+      <h1>戴颖</h1>
+      <p class="hero-note">擅长使用 AI 工具解决实际问题。遇到具体需求时，我会先把需求和流程想清楚，再借助 Coding Agent 将它做成能用的网页、插件或 Skill，并在实际使用中持续修改和完善。</p>
+    </section>
+
+    <section class="resume-section wrap" id="resume">
+      <div class="section-heading"><span class="section-label">简历</span><a class="resume-download" href="assets/daiying-resume.pdf" download>下载 PDF <span>↓</span></a></div>
+      <div class="resume-main">
+        <div class="resume-block"><h3>教育背景</h3><div><p><b>香港城市大学 · 商业人工智能</b><span>中国香港　2026.09 — 至今</span></p><p><b>湖南大学 · 财务管理（金融工程）</b><span>湖南长沙　2022.09 — 2026.06</span></p></div></div>
+        <div class="resume-block"><h3>校企合作项目经历</h3><div class="experience-list"><article><h4>结构化内容生成与渲染 <span>2025.11 — 2026.06</span></h4><p>设计衔接大模型与渲染脚本的 JSON 结构，明确 Prompt 输出字段和脚本处理规则；根据渲染结果迭代字段和逻辑，打通内容生成到 HTML/JPG 输出。</p></article><article><h4>Prompt 设计与自动化评测 <span>2026.02 — 2026.06</span></h4><p>设计标签体系、判断规则和结构化输出格式，搭建批量标注与版本评测流程；通过错误归因调整规则、示例和输出约束。</p></article><article><h4>采集提效工具开发 <span>2026.03 — 2026.07</span></h4><p>梳理搜索、筛选、采集、记录和导出流程，借助 Coding Agent 开发适配不同网站的工具，实现批量采集、筛选导出和中断续采。</p><a class="project-jump" href="#collection-plugins" data-highlight-target="plugin">查看四个采集插件 ↓</a></article></div></div>
+        <div class="resume-block"><h3>专业技能</h3><div><p><b>Coding 工具：</b>Claude Code、Codex、Trae</p><p><b>语言：</b>IELTS 6.5、CET-4、CET-6</p></div></div>
+      </div>
+    </section>
+
+    <section class="dashboard wrap" aria-label="项目分类">
+      <div class="column column-web" id="web"><div class="column-heading"><span class="section-label">网页</span></div><span id="rental-results" class="anchor-target" aria-hidden="true"></span><div id="web-projects" class="web-list"></div></div>
+      <div class="column column-skills" id="skills"><div class="column-heading"><span class="section-label">Skill</span></div><span id="metro-rental-skill" class="anchor-target" aria-hidden="true"></span><div id="skill-list" class="skill-list"></div></div>
+      <div class="column column-plugins" id="plugins"><div class="column-heading"><span class="section-label">插件</span></div><span id="collection-plugins" class="anchor-target" aria-hidden="true"></span><div id="plugin-list" class="plugin-list"></div></div>
+    </section>
+  </main>
+  <footer class="footer wrap"><span>戴颖</span><a href="#top">回到顶部 ↑</a></footer>
+  <script src="data/repos.js"></script><script src="assets/github.js"></script>
+</body>
+</html>

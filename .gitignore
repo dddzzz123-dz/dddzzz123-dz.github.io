@@ -1,0 +1,10 @@
+__pycache__/
+.pytest_cache/
+.venv/
+qa/
+site/data/samples/
+site/samples/
+site/comparison/
+*.log
+.env*
+!.env.example

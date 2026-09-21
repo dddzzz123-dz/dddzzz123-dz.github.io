@@ -1,0 +1,46 @@
+name: Publish portfolio to GitHub Pages
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: pages
+  cancel-in-progress: true
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - name: Check portfolio and public directory
+        run: |
+          python scripts/check_site.py
+      - name: Prepare Pages artifact
+        run: |
+          rm -rf .pages
+          mkdir -p .pages/assets/previews .pages/data
+          cp site/index.html .pages/index.html
+          cp site/assets/github.css .pages/assets/github.css
+          cp site/assets/github.js .pages/assets/github.js
+          cp site/assets/favicon.svg .pages/assets/favicon.svg
+          cp site/assets/daiying-resume.pdf .pages/assets/daiying-resume.pdf
+          cp site/assets/previews/*.png .pages/assets/previews/
+          cp site/data/repos.js .pages/data/repos.js
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: .pages
+  deploy:
+    needs: validate
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4
